@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 import reactStringReplace from 'react-string-replace'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import Badge from '@mui/material/Badge'
 import Chip from '@mui/material/Chip'
 import Tooltip from '@mui/material/Tooltip'
 import PomodoroIcon from '../../../resources/pomodoro.svg?asset'
@@ -82,8 +83,10 @@ const RendererComponent: React.FC<RendererComponentProps> = memo(
           onClick={() => HandleFilterSelect(type, [value], filters, false)}
           data-testid={`datagrid-button-${type}`}
         >
-          <Chip label="rec:" />
-          <div>{value}</div>
+          <Badge>
+            <Chip label="rec:" />
+            <div>{value}</div>
+          </Badge>
         </button>
       ),
       pm: (value, type) => (
