@@ -40,7 +40,7 @@ export function IsExcluded(attribute, filters) {
     for (const filter of filterList) {
       const filterValues = filter.value;
       const exclude = filter.exclude;
-      
+
       if (filterValues.some(value => attributeValues.includes(value)) && exclude) {
         return true;
       }
@@ -127,43 +127,27 @@ export const friendlyDate = (
     )
   }
 
-  if (
+  if (date.isAfter(today.add(1, 'month').endOf('month'))) {
+    results.push(dayjs(date).format('YYYY-MM-DD'))
+  } else if (date.month() === today.add(1, 'month').month()) {
+    results.push(t('drawer.attributes.nextMonth'))
+  } else if (date.isSame(today.add(1, 'day'), 'day')) {
+    results.push(t('drawer.attributes.tomorrow'))
+  } else if (date.isSame(today.add(1, 'week'), 'week')) {
+    results.push(t('drawer.attributes.nextWeek'))
+  } else if (date.isSame(today, 'day')) {
+    results.push(t('drawer.attributes.today'))
+  } else if (date.isSame(today.subtract(1, 'day'), 'day')) {
+    results.push(t('drawer.attributes.yesterday'))
+  } else if (date.isSame(today, 'week')) {
+    results.push(t('drawer.attributes.thisWeek'))
+  } else if (date.isBefore(today.endOf('month')) && date.isAfter(today.subtract(1, 'day'), 'day')) {
+    results.push(t('drawer.attributes.thisMonth'))
+  } else if (
     date.isAfter(today.subtract(1, 'week').startOf('week').subtract(1, 'day')) &&
     date.isBefore(today.subtract(1, 'week').endOf('week'))
   ) {
     results.push(t('drawer.attributes.lastWeek'))
-  }
-
-  if (date.isBefore(today.endOf('month')) && date.isAfter(today.subtract(1, 'day'), 'day')) {
-    results.push(t('drawer.attributes.thisMonth'))
-  }
-
-  if (date.isSame(today, 'week')) {
-    results.push(t('drawer.attributes.thisWeek'))
-  }
-
-  if (date.isSame(today.subtract(1, 'day'), 'day')) {
-    results.push(t('drawer.attributes.yesterday'))
-  }
-
-  if (date.isSame(today, 'day')) {
-    results.push(t('drawer.attributes.today'))
-  }
-
-  if (date.isSame(today.add(1, 'day'), 'day')) {
-    results.push(t('drawer.attributes.tomorrow'))
-  }
-
-  if (date.isSame(today.add(1, 'week'), 'week')) {
-    results.push(t('drawer.attributes.nextWeek'))
-  }
-
-  if (date.month() === today.add(1, 'month').month()) {
-    results.push(t('drawer.attributes.nextMonth'))
-  }
-
-  if (date.isAfter(today.add(1, 'month').endOf('month'))) {
-    results.push(dayjs(date).format('YYYY-MM-DD'))
   }
 
   return results
