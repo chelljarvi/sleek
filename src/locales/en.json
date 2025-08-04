@@ -11,7 +11,7 @@
   "fileTabs.removeFileText": "It will not be deleted from your hard drive",
   "fileTabs.removeFileLabel": "Remove",
   "settings": "Settings",
-  "settings.appendCreationDate": "Append creation date when todo is created",
+  "settings.appendCreationDate": "Show creation date in grid",
   "settings.convertRelativeToAbsoluteDates": "Convert relative dates to absolute dates",
   "settings.notificationsAllowed": "Send notifications",
   "settings.showFileTabs": "Show file tabs",

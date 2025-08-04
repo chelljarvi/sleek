@@ -47,7 +47,7 @@ function prepareContentForWriting(lineNumber: number, string: string) {
   } else {
     for (let i = 0; i < linesToAdd.length; i++) {
       const JsTodoTxtObject = new Item(linesToAdd[i])
-      if (SettingsStore.get('appendCreationDate') && !JsTodoTxtObject.created()) {
+      if (!JsTodoTxtObject.created()) {
         JsTodoTxtObject.setCreated(new Date())
       }
       linesInFile.push(JsTodoTxtObject.toString())

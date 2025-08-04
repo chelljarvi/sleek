@@ -167,7 +167,7 @@ const Row: React.FC<RowProps> = memo(
             </Tooltip>
           }
 
-          {todoObject.created &&       
+          {settings.appendCreationDate &&
             <Tooltip title={`${t('shared.attributeMapping.created')} ${todoObject.created}`} arrow>
               <EventNoteIcon
                 data-todotxt-attribute="created"
