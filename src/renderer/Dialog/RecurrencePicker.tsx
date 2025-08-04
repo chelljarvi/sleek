@@ -32,32 +32,21 @@ const RecurrencePickerComponent: React.FC<RecurrencePickerComponentProps> = ({
   const [interval, setInterval] = useState<string | null>(null)
   const [amount, setAmount] = useState<string | null>(null)
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>, popupState): void => {
+    if (event.key === 'Enter') {
+      event.preventDefault()
+      event.stopPropagation()
+      const updatedRecurrence = (getStrictIndicator(recurrence) ? '+' : '') + getAmount(recurrence) + getInterval(recurrence)
+      handleChange('rec', updatedRecurrence)
+      popupState.close()
+    }
+  }
+
   useEffect(() => {
     setStrictRecurrence(getStrictIndicator(recurrence))
     setAmount(getAmount(recurrence))
     setInterval(getInterval(recurrence))
   }, [recurrence])
-
-  useEffect(() => {
-    const handleEnterKeyPress = (event: KeyboardEvent): void => {
-      if (event.key === 'Enter') {
-        event.preventDefault()
-        if (recurrenceFieldRef.current) {
-          recurrenceFieldRef.current.click()
-        }
-      }
-    }
-
-    if (recurrenceFieldRef.current) {
-      recurrenceFieldRef.current.addEventListener('keydown', handleEnterKeyPress)
-    }
-
-    return (): void => {
-      if (recurrenceFieldRef.current) {
-        recurrenceFieldRef.current.removeEventListener('keydown', handleEnterKeyPress)
-      }
-    }
-  }, [recurrenceFieldRef])
 
   return (
     <PopupState
@@ -67,7 +56,9 @@ const RecurrencePickerComponent: React.FC<RecurrencePickerComponentProps> = ({
       parentPopupState={null}
     >
       {(popupState) => (
-        <FormControl>
+        <FormControl
+          onKeyDown={(event) => {handleKeyDown(event, popupState)}}
+        >
           <TextField
             label={t('todoDialog.recurrencePicker.label')}
             className="recurrencePicker"
@@ -115,9 +106,9 @@ const RecurrencePickerComponent: React.FC<RecurrencePickerComponentProps> = ({
               <RadioGroup
                 aria-labelledby="recurrencePickerRadioGroup"
                 value={interval}
-                onChange={(event) => {              
+                onChange={(event) => {
                   const updatedRecurrence = getStrictIndicator(recurrence) ? '+' + getAmount(recurrence) + event.target.defaultValue : getAmount(recurrence) + event.target.defaultValue
-                  handleChange('rec', updatedRecurrence)                  
+                  handleChange('rec', updatedRecurrence)
                 }}
               >
                 <FormControlLabel
