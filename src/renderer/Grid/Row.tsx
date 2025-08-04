@@ -93,7 +93,7 @@ const Row: React.FC<RowProps> = memo(
       if (clickedElement.tagName.toLowerCase() === 'button') match = true
       if (clickedElement.tagName.toLowerCase() === 'img') match = true
       return match
-    }    
+    }
 
     const handleRowClick = (event: React.MouseEvent | React.KeyboardEvent): void => {
       const clickedElement = event.target as HTMLElement
@@ -167,7 +167,7 @@ const Row: React.FC<RowProps> = memo(
             </Tooltip>
           }
 
-          {settings.appendCreationDate &&
+          {settings.showCreationDateInTodoList &&
             <Tooltip title={`${t('shared.attributeMapping.created')} ${todoObject.created}`} arrow>
               <EventNoteIcon
                 data-todotxt-attribute="created"

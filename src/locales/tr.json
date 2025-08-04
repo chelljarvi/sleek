@@ -11,7 +11,7 @@
   "fileTabs.removeFileText": "Sabit diskinizden silinmeyecektir",
   "fileTabs.removeFileLabel": "Kaldır",
   "settings": "Ayarlar",
-  "settings.appendCreationDate": "Görev oluşturulduğunda oluşturma tarihini ekle",
+  "settings.showCreationDateInTodoList": "Show creation date in todo list",
   "settings.convertRelativeToAbsoluteDates": "İlgili tarihleri mutlak tarihlere dönüştür",
   "settings.notificationsAllowed": "Bildirimleri Gönder",
   "settings.showFileTabs": "Dosya sekmesini göster",

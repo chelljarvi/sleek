@@ -11,7 +11,7 @@
   "fileTabs.removeFileText": "यह आपके हार्ड ड्राइव से हटाएं नहीं होगा।",
   "fileTabs.removeFileLabel": "हटाएं",
   "settings": "सेटिंग्स",
-  "settings.appendCreationDate": "कार्य बनाते समय निर्माण तिथि जोड़ें",
+  "settings.showCreationDateInTodoList": "Show creation date in todo list",
   "settings.convertRelativeToAbsoluteDates": "सांख्यिक तिथियों को पूर्ण तिथियों में परिवर्तित करें",
   "settings.notificationsAllowed": "सूचनाएँ भेजें",
   "settings.showFileTabs": "फ़ाइल टैब दिखाएं",

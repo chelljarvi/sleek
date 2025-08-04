@@ -119,6 +119,8 @@ const migrations = {
     store.set('compact', false)
     store.set('sortCompletedLast', false)
   }
+  // store.set('showCreationDateInTodoList', store.get('appendCreationDate'))
+  // store.delete('appendCreationDate')
 }
 
 const config = new Store<StoreType>({
@@ -173,7 +175,7 @@ config.onDidAnyChange((newValue, oldValue) => {
 config.onDidChange('files', (newValue: FileObject[] | undefined) => {
   try {
     if (!newValue) return false;
-    
+
     createFileWatcher(newValue)
     handleTray(config.get('tray'))
     createMenu(newValue)
@@ -195,7 +197,7 @@ config.onDidChange('menuBarVisibility', (menuBarVisibility) => {
     mainWindow!.setMenuBarVisibility(menuBarVisibility)
   } catch (error: any) {
     handleError(error)
-  }  
+  }
 })
 
 config.onDidChange('tray', (tray) => {

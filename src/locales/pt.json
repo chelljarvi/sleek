@@ -11,7 +11,7 @@
   "fileTabs.removeFileText": "Não será eliminado do seu disco rígido",
   "fileTabs.removeFileLabel": "Remover",
   "settings": "Definições",
-  "settings.appendCreationDate": "Anexar data de criação quando a tarefa é criada",
+  "settings.showCreationDateInTodoList": "Show creation date in todo list",
   "settings.convertRelativeToAbsoluteDates": "Converter datas relativas em datas absolutas",
   "settings.notificationsAllowed": "Enviar notificações",
   "settings.showFileTabs": "Mostrar separadores de ficheiro",

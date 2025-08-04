@@ -122,6 +122,8 @@ const migrations = {
     config.set('invertTrayColor', false),
     config.set('startMinimized', false)
   }
+  // store.set('showCreationDateInTodoList', store.get('appendCreationDate'))
+  // store.delete('appendCreationDate')
 }
 
 const rerenderDefinition = {
@@ -193,10 +195,10 @@ SettingsStore.onDidAnyChange((newValue, oldValue) => {
 SettingsStore.onDidChange('files', (newValue: FileObject[] | undefined) => {
   try {
     if (!newValue) return false;
-    
+
     createFileWatcher(newValue)
     HandleTray()
-    
+
   } catch (error: any) {
     HandleError(error)
   }
@@ -215,7 +217,7 @@ SettingsStore.onDidChange('menuBarVisibility', (menuBarVisibility) => {
     mainWindow!.setMenuBarVisibility(menuBarVisibility)
   } catch (error: any) {
     HandleError(error)
-  }  
+  }
 })
 
 SettingsStore.onDidChange('tray', () => {

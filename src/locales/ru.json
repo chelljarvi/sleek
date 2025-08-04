@@ -11,7 +11,7 @@
   "fileTabs.removeFileText": "Он не будет удален с вашего жесткого диска",
   "fileTabs.removeFileLabel": "Удалить",
   "settings": "Настройки",
-  "settings.appendCreationDate": "Добавить дату создания при создании задачи",
+  "settings.showCreationDateInTodoList": "Show creation date in todo list",
   "settings.convertRelativeToAbsoluteDates": "Преобразовать относительные даты в абсолютные",
   "settings.notificationsAllowed": "Отправлять уведомления",
   "settings.showFileTabs": "Показать вкладки файлов",

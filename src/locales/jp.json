@@ -11,7 +11,7 @@
   "fileTabs.removeFileText": "ハードディスクからは削除されません。",
   "fileTabs.removeFileLabel": "削除",
   "settings": "設定",
-  "settings.appendCreationDate": "タスク作成時に作成日を追加",
+  "settings.showCreationDateInTodoList": "Show creation date in todo list",
   "settings.convertRelativeToAbsoluteDates": "相対日付を絶対日付に変換",
   "settings.notificationsAllowed": "通知を送信",
   "settings.showFileTabs": "ファイルタブを表示",

@@ -11,7 +11,7 @@
   "fileTabs.removeFileText": "它不会从您的硬盘驱动器中删除。",
   "fileTabs.removeFileLabel": "删除",
   "settings": "设置",
-  "settings.appendCreationDate": "创建任务时附加创建日期",
+  "settings.showCreationDateInTodoList": "Show creation date in todo list",
   "settings.convertRelativeToAbsoluteDates": "将相对日期转换为绝对日期",
   "settings.notificationsAllowed": "发送通知",
   "settings.showFileTabs": "显示文件选项卡",

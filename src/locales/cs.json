@@ -11,7 +11,7 @@
   "fileTabs.removeFileText": "Nebude smazán z pevného disku",
   "fileTabs.removeFileLabel": "Odstranit",
   "settings": "Nastavení",
-  "settings.appendCreationDate": "Přidat datum vytvoření při vytvoření úkolu",
+  "settings.showCreationDateInTodoList": "Show creation date in todo list",
   "settings.convertRelativeToAbsoluteDates": "Převést relativní data na absolutní data",
   "settings.notificationsAllowed": "Odeslat oznámení",
   "settings.showFileTabs": "Zobrazit záložky souborů",

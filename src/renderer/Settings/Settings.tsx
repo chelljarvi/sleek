@@ -23,7 +23,7 @@ import './Settings.scss'
 const { ipcRenderer, store } = window.api
 
 const visibleSettings: VisibleSettings = {
-  appendCreationDate: {
+  showCreationDateInTodoList: {
     style: 'toggle'
   },
   convertRelativeToAbsoluteDates: {
@@ -32,7 +32,7 @@ const visibleSettings: VisibleSettings = {
   useHumanFriendlyDates: {
     style: 'toggle',
     help: 'https://github.com/ransome1/sleek/wiki/Human-friendly-dates'
-  },  
+  },
   tray: {
     style: 'toggle'
   },
@@ -100,7 +100,7 @@ interface SettingsComponentProps extends WithTranslation {
 }
 
 const SettingsComponent: React.FC<SettingsComponentProps> = memo(({ isOpen, onClose, settings, setIsSettingsOpen, setTheme, setTodoData, t }) => {
-    
+
     useEffect(() => {
       if (settings.files?.length === 0) {
         setTodoData(null)
@@ -140,7 +140,7 @@ const SettingsComponent: React.FC<SettingsComponentProps> = memo(({ isOpen, onCl
       return () => {
         document.body.classList.remove('dark', 'light', 'compact');
       };
-    }, [settings.shouldUseDarkColors, settings.zoom, settings.compact, settings.disableAnimations]);    
+    }, [settings.shouldUseDarkColors, settings.zoom, settings.compact, settings.disableAnimations]);
 
     const handleClose = (): void => {
       setIsSettingsOpen(false)
