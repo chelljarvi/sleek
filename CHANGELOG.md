@@ -2,6 +2,39 @@
 
 All notable changes to sleek will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.20] - 2025-08-12
+
+### Added
+* Updated all dependencies to its latest versions
+* Added Saturday as option for first day of the week (#721) contributed by @Lezurex
+
+### Enhanced
+* Enhanced Italian translations contributed by @lookup82
+* Enhanced archiving function (#810) contributed by @Lezurex
+* Minor CSS and React component clean up
+
+### Fixed
+* Fixed #575 contributed by @Lezurex
+* Fixed #728 contributed by @Lezurex
+* Fixed #800 contributed by @alihamamah
+* Fixed #781 contributed by @lookup82
+* Fixed visual bug in recurrence picker
+* Fixed visual bug in date field
+
+## [2.0.18] - 2025-02-26
+
+### Added
+
+* `vitest` as new testing framework
+* Test cases for `Notification` module
+* Configured `codecov` for testing during pipeline runs
+
+### Enhanced
+
+* Refactored stores
+* Refactored `Notification` module
+* Refactored `compact view`
+
 ## [2.0.19] - 2025-03-06
 
 ### Added
