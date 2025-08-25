@@ -92,6 +92,7 @@ const createRecurringTodo = (string: string, recurrence: string): string => {
 
     JsTodoTxtObject.setComplete(false)
     JsTodoTxtObject.setCompleted(null)
+    JsTodoTxtObject.removeExtension('pm')
 
     prepareContentForWriting(-1, JsTodoTxtObject.toString())
 
