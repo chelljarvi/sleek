@@ -32,27 +32,29 @@ const DrawerAttributesComponent: React.FC<DrawerAttributesComponentProps> = memo
       const processedAttributes = {}
 
       Object.keys(attributes).forEach((key) => {
-        if (attributes[key]) {
-          const count = attributes[key].count
-          const groupedNames =
-            settings.useHumanFriendlyDates && isDate
-              ? friendlyDate(key, attributeKey, settings, t)
-              : [key]
+        if (!attributes[key]) return
 
-          groupedNames.forEach((groupedName) => {
-            if (!processedAttributes[groupedName]) {
-              processedAttributes[groupedName] = {
-                count,
-                notify: attributes[key].notify,
-                value: [key],
-              }
-            } else {
-              processedAttributes[groupedName].count += count
-              processedAttributes[groupedName].notify = processedAttributes[groupedName].notify || attributes[key].notify
-              processedAttributes[groupedName].value.push(key)
+        const count = attributes[key].count
+        const groupedNames =
+          settings.useHumanFriendlyDates && isDate
+            ? friendlyDate(key, attributeKey, settings, t)
+            : [key]
+
+        groupedNames.forEach((groupedName) => {
+          if (!processedAttributes[groupedName]) {
+            processedAttributes[groupedName] = {
+              count,
+              notify: attributes[key].notify,
+              value: [key],
             }
-          })
-        }
+
+            return
+          }
+
+          processedAttributes[groupedName].count += count
+          processedAttributes[groupedName].notify = processedAttributes[groupedName].notify || attributes[key].notify
+          processedAttributes[groupedName].value.push(key)
+        })
       })
       const sorting = [
         t('drawer.attributes.overdue'),
