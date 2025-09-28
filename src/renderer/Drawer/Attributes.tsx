@@ -113,8 +113,9 @@ const DrawerAttributesComponent: React.FC<DrawerAttributesComponentProps> = memo
                       event.stopPropagation()
                       HandleFilterSelect(key, attribute.value, filters, true, groupedName)
                     }}
+                    onMouseEnter={() => setHovered(`${key}-${value}-${childIndex}-hide`)}
                   >
-                    {hovered === `${key}-${value}-${childIndex}` ? (
+                    {hovered === `${key}-${value}-${childIndex}-hide` ? (
                       <VisibilityOffIcon />
                     ) : (
                       attribute.count
