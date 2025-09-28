@@ -103,7 +103,7 @@ const DrawerAttributesComponent: React.FC<DrawerAttributesComponentProps> = memo
             data-todotxt-value={value}
             onMouseEnter={() => setHovered(`${key}-${value}-${childIndex}`)}
             onMouseLeave={() => setHovered(null)}
-            className={`filter ${selected ? 'selected' : ''} ${excluded ? 'excluded' : ''}`}
+            className={`filter ${selected ? 'selected' : ''} ${hovered === `${key}-${value}-${childIndex}` ? 'hovered' : ''} ${excluded ? 'excluded' : ''}`}
           >
             <Badge
               badgeContent={
@@ -146,7 +146,7 @@ const DrawerAttributesComponent: React.FC<DrawerAttributesComponentProps> = memo
                 data-todotxt-attribute={key}
                 data-todotxt-value={value}
                 data-testid={`drawer-button-exclude-${key}`}
-                className="overlay"
+                className={`overlay ${hovered === `${key}-${value}-${childIndex}` ? 'hovered' : ''}` }
                 onClick={() =>
                   HandleFilterSelect(key, attribute.value, filters, true, groupedName)
                 }
