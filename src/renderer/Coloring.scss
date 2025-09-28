@@ -17,6 +17,12 @@ button:hover:not(.MuiIconButton-root) {
     }
   }
 
+  .overlay.hovered {
+    svg {
+      color: color.adjust(#5a5a5a, $lightness: +10%);
+    }
+  }
+
   .MuiBadge-root {
     &.notify {
       .MuiBadge-badge {
@@ -29,14 +35,21 @@ button:hover:not(.MuiIconButton-root) {
   button,
   button:hover {
     color: var(--color1);
-    background: var(--color2);
     &:focus-visible {
       outline-color: var(--color1);
     }
     .MuiChip-root {
       color: white;
+    }
+  }
+  button {
+    background: var(--color2);
+    .MuiChip-root {
       background: var(--color1);
     }
+  }
+  button:hover {
+    background: color.adjust(#ccc, $lightness: -30%);;
   }
   .MuiBadge-badge {
     color: var(--color2);
@@ -84,6 +97,11 @@ button:hover:not(.MuiIconButton-root) {
   border-left-color: var(--color2);
   &.selected {
     button {
+      background: color.adjust(#ff3860, $lightness: -30%);
+    }
+  }
+  &.hovered {
+    button {
       background: color.adjust(#ff3860, $lightness: -25%);
     }
   }
@@ -97,6 +115,11 @@ button:hover:not(.MuiIconButton-root) {
       background: color.adjust(#fa745e, $lightness: -25%);
     }
   }
+  &.hovered {
+    button {
+      background: color.adjust(#fa745e, $lightness: -15%);
+    }
+  }
 }
 
 *[data-todotxt-attribute='priority'][data-todotxt-value='C'] {
@@ -105,6 +128,11 @@ button:hover:not(.MuiIconButton-root) {
   &.selected {
     button {
       background: color.adjust(#ffdd57, $lightness: -25%);
+    }
+  }
+  &.hovered {
+    button {
+      background: color.adjust(#ffdd57, $lightness: -20%);
     }
   }
 }
@@ -163,6 +191,11 @@ button:hover:not(.MuiIconButton-root) {
         background: color.adjust(#5a5a5a, $lightness: -15%);
       }
     }
+    &.hovered {
+      button {
+        background: color.adjust(#5a5a5a, $lightness: -10%);
+      }
+    }
   }
 
   *[data-todotxt-attribute='contexts'] {
@@ -173,6 +206,11 @@ button:hover:not(.MuiIconButton-root) {
         background: color.adjust(#1e6251, $lightness: -10%);
       }
     }
+    &.hovered {
+      button {
+        background: color.adjust(#1e6251, $lightness: -5%);
+      }
+    }
   }
   *[data-todotxt-attribute='projects'] {
     --color1: #f1d6f1;
@@ -180,6 +218,11 @@ button:hover:not(.MuiIconButton-root) {
     &.selected {
       button {
         background: color.adjust(#6f266f, $lightness: -10%);
+      }
+    }
+    &.hovered {
+      button {
+        background: color.adjust(#6f266f, $lightness: -5%);
       }
     }
   }
