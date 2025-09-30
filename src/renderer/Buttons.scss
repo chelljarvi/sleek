@@ -1,6 +1,6 @@
 @use 'Variables.scss';
 
-button {	
+button {
 	font-size: 1em;
 	border: none;
 	border-radius: Variables.$radius;
@@ -29,7 +29,7 @@ button {
         &:hover {
         	background: Variables.$lighter-grey;
         }
-      }   
+      }
     }
   }
 }
@@ -55,7 +55,7 @@ button {
 	  	height: 100%;
 	  	padding: 0.1em 0;
 	  }
-	}	
+	}
   &.group {
 		button {
 	    font-size: 1.25em;
@@ -86,11 +86,6 @@ button {
 			 	margin: 0 0.2em 0 0;
 			}
 		}
-		&:disabled {
-			color: Variables.$dark-grey;
-			background: Variables.$mid-grey;
-			filter: opacity(50%) grayscale(100%);
-		}
 	}
   .overlay {
     width: 100%;
@@ -120,13 +115,20 @@ button {
 		svg {
 			margin-top: 0.15em;
 			font-size: inherit;
-		}		
+		}
 	}
 	&.excluded {
       .overlay {
         display: flex;
         color: Variables.$darker-grey;
       }
+			button {
+				opacity: 0.7;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
     }
 }
 .MuiBadge-badge.MuiBadge-dot {
@@ -153,7 +155,7 @@ div[data-todotxt-attribute='priority'] {
         color: Variables.$blue;
       }
     }
-    
+
     &:hover {
       border: none;
     }
@@ -172,7 +174,7 @@ div[data-todotxt-attribute='priority'] {
 	// 	  	padding: 0.1em 0;
 	// 	  }
 	// 	}
-	// }	
+	// }
 	div[data-todotxt-attribute='priority'] {
 		button {
 			font-size: 1.25em;
@@ -184,12 +186,12 @@ div[data-todotxt-attribute='priority'] {
 
 .dark {
     .filter {
-      button:disabled {
-        color: Variables.$mid-grey;
-        background: Variables.$dark-grey;
-      }
       .overlay {
         background: rgba(0, 0, 0, 0.35);
+
+				&.hovered {
+						opacity: 0.3;
+				}
       }
     }
 	.MuiDialog-root {
@@ -200,8 +202,8 @@ div[data-todotxt-attribute='priority'] {
 	        	color: white;
 	        	background: Variables.$dark-grey;
 	        }
-	      }   
+	      }
 	    }
 	  }
-	}    
+	}
 }

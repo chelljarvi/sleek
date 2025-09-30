@@ -88,12 +88,6 @@ const Row: React.FC<RowProps> = memo(
       if (clickedElement.classList.contains('MuiChip-label')) match = true
       if (clickedElement.getAttribute('data-testid') === 'datagrid-picker-date-t') match = true
       if (clickedElement.getAttribute('data-testid') === 'datagrid-picker-date-due') match = true
-      // if (clickedElement.closest('.filter')) {
-      //   const foundElement = clickedElement.closest('.filter');
-      //   if(foundElement.getAttribute('data-todotxt-attribute') === 'due' || foundElement.getAttribute('data-todotxt-attribute') === 't') {
-      //     match = true
-      //   }
-      // }
       if (clickedElement.tagName.toLowerCase() === 'a') match = true
       if (clickedElement.tagName.toLowerCase() === 'input') match = true
       if (clickedElement.tagName.toLowerCase() === 'button') match = true
@@ -140,7 +134,6 @@ const Row: React.FC<RowProps> = memo(
           onContextMenu={(event) => handleContextMenu(event, todoObject.string)}
           data-testid={`datagrid-row`}
           data-todotxt-attribute="priority"
-          data-todotxt-value={todoObject.priority}
         >
           <Checkbox
             icon={<CircleUnchecked />}
@@ -173,7 +166,7 @@ const Row: React.FC<RowProps> = memo(
             </Tooltip>
           }
 
-          {settings.showCreationDateInTodoList &&
+          {todoObject.created &&
             <Tooltip title={`${t('shared.attributeMapping.created')} ${todoObject.created}`} arrow>
               <EventNoteIcon
                 data-todotxt-attribute="created"
