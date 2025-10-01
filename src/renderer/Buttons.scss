@@ -116,6 +116,11 @@ button {
 			margin-top: 0.15em;
 			font-size: inherit;
 		}
+		.attributeDot {
+			width: 1.5em;
+			margin: 0 -1em;
+			text-align: center;
+		}
 	}
 	&.excluded {
       .overlay {

@@ -109,6 +109,7 @@ const DrawerAttributesComponent: React.FC<DrawerAttributesComponentProps> = memo
               badgeContent={
                 !disabled && attribute.count > 0 ? (
                   <span
+                    className="attributeDot"
                     onClick={(event) => {
                       event.stopPropagation()
                       HandleFilterSelect(key, attribute.value, filters, true, groupedName)
