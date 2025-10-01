@@ -1,7 +1,7 @@
 directories:
   output: dist
   buildResources: build
-buildVersion: '59'
+buildVersion: '60'
 asar: true
 files:
   - "**/*"
@@ -76,10 +76,10 @@ win:
 nsis:
   artifactName: ${productName}-${version}-win-${arch}-Setup.${ext}
 appx:
-  displayName: sleek - todo.txt manager for Windows, free and open-source (FOSS)
+  displayName: sleek - Todo manager
   identityName: 17450RobinAhle.sleektodomanager
   publisher: CN=2B3D4037-FF2E-4C36-84A6-CFF49F585C0C
-  publisherDisplayName: ransome1
+  publisherDisplayName: Robin Ahle
   applicationId: RobinAhle.sleektodomanager
 linux:
   icon: ./resources/icon
@@ -102,4 +102,4 @@ linux:
       arch:
         - arm64
         - x64
-electronVersion: 34.0.0
+electronVersion: 38.0.0
