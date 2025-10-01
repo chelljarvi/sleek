@@ -96,7 +96,7 @@ const SearchComponent: React.FC<SearchComponentProps> = memo(({ headers, setting
     const filter = createFilterOptions<SearchFilter>()
     const filtered: SearchFilter[] = filter(options as SearchFilter[], params)
     const { inputValue } = params
-    const isExisting = filtered.some((filter) => filter.label && filter.label.includes(inputValue))
+    const isExisting = filtered.some((filter) => filter.label == inputValue)
     if (inputValue !== '' && !isExisting) {
       filtered.push({
         inputValue,
@@ -104,7 +104,7 @@ const SearchComponent: React.FC<SearchComponentProps> = memo(({ headers, setting
       })
     }
     return filtered
-  }    
+  }
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown)

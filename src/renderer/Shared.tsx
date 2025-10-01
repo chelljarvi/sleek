@@ -25,6 +25,10 @@ interface Settings {
 export function IsSelected(key, filters, value) {
   if (filters[key]) {
     for (let i = 0; i < filters[key].length; i++) {
+      if(filters[key][i].exclude === true) {
+        continue;
+      }
+      
       if(JSON.stringify(filters[key][i].value) === JSON.stringify(value)) {
         return true;
       }
